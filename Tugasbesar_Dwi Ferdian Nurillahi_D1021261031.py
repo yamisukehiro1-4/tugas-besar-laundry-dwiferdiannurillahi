@@ -406,19 +406,17 @@ if st.session_state.hasil:
             rupiah(potongan)
         )
 
-    st.markdown(f"""
-    <div class="total-box">
-
-        <h3>💎 TOTAL PEMBAYARAN</h3>
-
-        <h1>{rupiah(total)}</h1>
-
-        <p style="color:#d9efff;">
-        Terima kasih telah menggunakan NIGHTWASH.
-        </p>
-
-    </div>
-    """, unsafe_allow_html=True)
+    
+    st.markdown(
+        f'<div class="total-box">'
+        f'<h3>💎 TOTAL PEMBAYARAN</h3>'
+        f'<h1>{rupiah(total)}</h1>'
+        f'<p style="color:#d9efff;">'
+        f'Terima kasih telah menggunakan NIGHTWASH.'
+        f'</p>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
 
 
 # ==========================================
@@ -452,18 +450,14 @@ with st.expander("📖 LIHAT RUMUS PERHITUNGAN"):
 # FOOTER
 # ==========================================
 
-st.markdown("""
-<div class="footer">
 
-    <h3 style="color:#58aaff;">
-    🌙 NIGHTWASH LAUNDRY
-    </h3>
+st.markdown(
+    '<div class="footer">'
+    '<h3 style="color:#58aaff;">🌙 NIGHTWASH LAUNDRY</h3>'
+    'PYTHON & STREAMLIT PROJECT'
+    '<br><br>'
+    '© 2026 | Premium Laundry Calculation System'
+    '</div>',
+    unsafe_allow_html=True
+)
 
-    PYTHON & STREAMLIT PROJECT
-
-    <br><br>
-
-    © 2026 | Premium Laundry Calculation System
-
-</div>
-""", unsafe_allow_html=True)
