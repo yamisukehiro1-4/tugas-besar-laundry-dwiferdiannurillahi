@@ -1,5 +1,6 @@
 
 import streamlit as st
+import textwrap
 
 # ==========================================
 # APLIKASI LAUNDRY KILOAN
@@ -7,10 +8,11 @@ import streamlit as st
 # ==========================================
 
 st.set_page_config(
-    page_title="NIGHTWASH | Laundry Kiloan",
-    page_icon="🧺",
-    layout="wide"
-)
+def tampilkan_html(kode):
+    st.markdown(
+        textwrap.dedent(kode).strip(),
+        unsafe_allow_html=True
+    )
 
 # ==========================================
 # CSS DESAIN
@@ -32,28 +34,34 @@ st.markdown("""
 
 /* HEADER */
 
-.hero {
-    background: linear-gradient(120deg, #101e36, #174b83);
-    padding: 35px;
-    border-radius: 22px;
-    border: 1px solid #2875c7;
-    box-shadow: 0 8px 30px #00000055;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 42px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-.hero p {
-    color: #a9d4ff;
-    font-size: 15px;
-}
-
+tampilkan_html("""
+<div class="hero">
+    <h1>🌙 NIGHTWASH</h1>
+    <h3>LAUNDRY KILOAN</h3>
+    <p>
+        PREMIUM LAUNDRY SERVICE
+        <br>
+        Bersih maksimal, praktis, dan terpercaya.
+    </p>
+    <p>⚡ SMART CALCULATION SYSTEM</p>
+</div>
+""")
+tampilkan_html("""
+<div style="
+background:linear-gradient(100deg,#101e36,#183b63);
+border:1px solid #2869a5;
+border-radius:18px;
+padding:18px;
+text-align:center;
+margin-bottom:22px;
+">
+    <div style="font-size:65px;">🧥 🧺 🌌</div>
+    <h3 style="color:#69baff;">NIGHTWASH LAUNDRY</h3>
+    <p style="color:#b5d9ff;">
+        Your Clothes, Our Priority.
+    </p>
+</div>
+""")
 /* KARTU */
 
 .card {
@@ -124,24 +132,15 @@ div.stButton > button:hover {
 
 /* TOTAL BAYAR */
 
-.total-box {
-    background: linear-gradient(120deg, #07519b, #087fc7);
-    border: 1px solid #62baff;
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: 0 5px 25px #087fc755;
-}
-
-.total-box h3 {
-    color: #dceeff !important;
-}
-
-.total-box h1 {
-    color: white;
-    font-size: 43px;
-    font-weight: 900;
-}
+tampilkan_html(f"""
+<div class="total-box">
+    <h3>💎 TOTAL PEMBAYARAN</h3>
+    <h1>{rupiah(total)}</h1>
+    <p style="color:#d9efff;">
+        Terima kasih telah menggunakan NIGHTWASH.
+    </p>
+</div>
+""")
 
 /* FOOTER */
 
